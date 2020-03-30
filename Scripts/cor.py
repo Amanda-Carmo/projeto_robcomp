@@ -91,7 +91,7 @@ if __name__=="__main__":
 			if len(media) != 0 and len(centro) != 0:
 				print("Média dos vermelhos: {0}, {1}".format(media[0], media[1]))
 				print("Centro dos vermelhos: {0}, {1}".format(centro[0], centro[1]))
-				vel = Twist(Vector3(0,0,0), Vector3(0,0,-0.1))
+				vel = Twist(Vector3(0,0,0), Vector3(0,0,-1))
 			velocidade_saida.publish(vel)
 			rospy.sleep(0.1)
 
