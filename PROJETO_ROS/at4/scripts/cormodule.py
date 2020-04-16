@@ -25,18 +25,21 @@ def identifica_cor(frame):
     # vermelho puro (H=0) estão entre H=-8 e H=8. 
     # Precisamos dividir o inRange em duas partes para fazer a detecção 
     # do vermelho:
-    frame = cv2.flip(frame, -1) # flip 0: eixo x, 1: eixo y, -1: 2 eixos
+    #frame = cv2.flip(frame, -1) # flip 0: eixo x, 1: eixo y, -1: 2 eixos
     frame_hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
-    cor_menor = np.array([150, 65, 0])
-    cor_maior = np.array([255, 85, 25])
-    #azul rgb(15, 75, 125)
+    cor_menor = np.array([232, 50, 50])
+    cor_maior = np.array([240, 255, 255])
+    #cor_menor = np.array([240, 90, 90])
+    #cor_maior = np.array([135, 100, 100])
     segmentado_cor = cv2.inRange(frame_hsv, cor_menor, cor_maior)
 
-    cor_menor = np.array([150, 70, 0])
-    cor_maior = np.array([255, 255, 13])
-    #rgb(0, 161, 3)
-    segmentado_cor += cv2.inRange(frame_hsv, cor_menor, cor_maior)
+
+    cor_menor = np.array([240, 50, 50])
+    cor_maior = np.array([248, 255, 255])
+    #cor_menor = np.array([0, 0, 150])
+    #cor_maior = np.array([13, 255, 255])
+    #segmentado_cor += cv2.inRange(frame_hsv, cor_menor, cor_maior)
 
     # Note que a notacão do numpy encara as imagens como matriz, portanto o enderecamento é
     # linha, coluna ou (y,x)
